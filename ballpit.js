@@ -142,7 +142,7 @@ function setup() {
     });
     World.add(engine.world, attractor);
 
-    addTexts();
+    // addTexts();
     addBoundaries();
 
     // setup mouse
