@@ -249,8 +249,8 @@ function touchEnded() {
     
     if ($menuDOM.css("display") == "none") {
     } else {
-
-        if (mouseY > 0) {
+   
+        if (mouseY > 0 && $('body .w-editor-publish-node').length == 0) {
             if (boxes.length < 80) {
                 let radius = 20 + Math.random() * 10;
 
