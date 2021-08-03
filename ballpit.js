@@ -103,13 +103,8 @@ function shuffleArrays(onlyHey=false) {
 function setup() {
     let container = document.getElementById("ballpit-container-1");
     shuffleArrays();
-
-    canvas = createCanvas($(window).width() * 0.8, $(window).height());
-    // canvas.canvas.addEventListener('mousewheel', function(event) {
-
-    //     return false;
-
-    // }, true);
+    let containerWidth = $('#menu-container') ? $('#menu-width').width() : $(container).width()*0.5
+    canvas = createCanvas(containerWidth, $(container).height());
     canvas.parent("ballpit-container-1");
 
     fontsize = container.clientWidth / 1080 * 40;
