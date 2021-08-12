@@ -103,9 +103,16 @@ function shuffleArrays(onlyHey=false) {
 function setup() {
     let container = document.getElementById("ballpit-container-1");
     shuffleArrays();
-    let containerWidth = $('#menu-container') ? $('#menu-width').width() : $(container).width()*0.5
-    canvas = createCanvas(containerWidth, $(container).height());
+    let containerWidth =  $(window).width()*0.6
+
+    if($(window).width() < 768){
+        containerWidth = $(window).width();
+    }
+    canvas = createCanvas(containerWidth, $(window).height());
     canvas.parent("ballpit-container-1");
+
+    $('#defaultCanvas0').css("position", "absolute");
+    $('#defaultCanvas0').css("left", "0px");
 
     fontsize = container.clientWidth / 1080 * 40;
 
