@@ -103,7 +103,7 @@ function shuffleArrays(onlyHey=false) {
 function setup() {
     let container = document.getElementById("ballpit-container-1");
     shuffleArrays();
-    let containerWidth =  $(window).width()*0.6
+    let containerWidth =  $(window).width()
 
     if($(window).width() < 768){
         containerWidth = $(window).width();
