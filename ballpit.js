@@ -103,14 +103,16 @@ function shuffleArrays(onlyHey=false) {
 function setup() {
     let container = document.getElementById("ballpit-container-1");
     shuffleArrays();
+    let containerWidth =  $(window).width()*0.6
 
-    canvas = createCanvas($(window).width() * 0.8, $(window).height());
-    // canvas.canvas.addEventListener('mousewheel', function(event) {
-
-    //     return false;
-
-    // }, true);
+    if($(window).width() < 768){
+        containerWidth = $(window).width();
+    }
+    canvas = createCanvas(containerWidth, $(window).height());
     canvas.parent("ballpit-container-1");
+
+    $('#defaultCanvas0').css("position", "absolute");
+    $('#defaultCanvas0').css("left", "0px");
 
     fontsize = container.clientWidth / 1080 * 40;
 
@@ -249,7 +251,7 @@ function touchEnded() {
     
     if ($menuDOM.css("display") == "none") {
     } else {
-
+   
         if (mouseY > 0) {
             if (boxes.length < 80) {
                 let radius = 20 + Math.random() * 10;
